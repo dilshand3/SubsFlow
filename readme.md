@@ -85,6 +85,8 @@ To prevent overselling:
 # Navigate to backend folder
 cd server
 
+### use sql query direct in upstash server , no direct migration of table
+
 # Install dependencies
 npm install
 
