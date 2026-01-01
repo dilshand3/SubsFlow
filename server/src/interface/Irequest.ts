@@ -18,6 +18,6 @@ export interface IcreatePlan {
     name : string;
     description : string;
     price : number;
-    duration : string;
+    duration : number;
     total_capacity : number;
 }

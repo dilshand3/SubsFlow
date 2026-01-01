@@ -6,6 +6,7 @@ import { pool } from "../db/connectPG";
 import { generateTokenandSetCokiee } from "../utils/cookies";
 import { IauthnticatedRequest } from "../middlewares/verifyToken";
 import { redisClient } from "../db/redis";
+import { validate as isUuid } from 'uuid';
 
 export const registerUser = async (req: Request, res: Response<Iresponse>): Promise<void> => {
     try {
@@ -108,6 +109,14 @@ export const loginUser = async (req: Request, res: Response<Iresponse>): Promise
 export const getCurrentUser = async (req: IauthnticatedRequest, res: Response<Iresponse>): Promise<void> => {
     try {
         const id = req.userId;
+
+        if (!isUuid(id as any)) {
+            res.status(400).json({
+                success: false,
+                message: "Invalid ID format"
+            });
+            return;
+        }
         if (!id) {
             res.status(401).json({ success: false, message: "Unauthorized access" });
             return;

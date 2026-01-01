@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS subscriptions (
     status VARCHAR(50) DEFAULT 'pending',
     start_date TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
     end_date TIMESTAMPTZ NOT NULL,
-    idempotency_key VARCHAR(255) UNIQUE,
+    idempotency_key VARCHAR(255), 
     created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
 
@@ -22,6 +22,9 @@ CREATE TABLE IF NOT EXISTS subscriptions (
         ON DELETE RESTRICT
 );
 
-CREATE UNIQUE INDEX unique_active_subscription 
+CREATE UNIQUE INDEX IF NOT EXISTS unique_active_subscription 
 ON subscriptions (customer_id, plan_id) 
 WHERE status = 'active';
+CREATE UNIQUE INDEX IF NOT EXISTS idx_unique_active_idempotency 
+ON subscriptions (idempotency_key) 
+WHERE status IN ('active', 'pending');

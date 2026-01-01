@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-PrimaryColor: #1A1A1A;
+  --bg-secondryColor: #272727;
+  --Gold-PrimaryColor: #FFA915;
+  --Text-White: #ffffff;
+  --Text-Muted: #b3b3b3;
+  --Danger-Color: #ff4d4d;
+  --Success: #4caf50;
+}
+
+body {
+  background-color: var(--bg-PrimaryColor);
+  height: 100%;
+  width: 100%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

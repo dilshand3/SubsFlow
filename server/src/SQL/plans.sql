@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS plans (
     name VARCHAR(100) NOT NULL,
     description TEXT,
     price DECIMAL(10, 2) NOT NULL,
-    duration VARCHAR(50) NOT NULL,
+    duration INTEGER NOT NULL,
     total_capacity INTEGER NOT NULL,
     subscriptions_left INTEGER NOT NULL,
     status VARCHAR(20) DEFAULT 'active',
@@ -11,3 +11,4 @@ CREATE TABLE IF NOT EXISTS plans (
     updated_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT seat_check CHECK (subscriptions_left >= 0 AND subscriptions_left <= total_capacity)
 )
+

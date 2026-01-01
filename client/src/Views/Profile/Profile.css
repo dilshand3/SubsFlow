@@ -1,0 +1,190 @@
+.profile-container {
+  padding: 1.5rem;
+  background-color: var(--bg-PrimaryColor);
+  min-height: 100vh;
+  color: var(--Text-White);
+  padding-top: 2rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  color: var(--Gold-PrimaryColor);
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5rem;
+}
+
+.user-card {
+  background-color: var(--bg-secondryColor);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #333;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.user-avatar {
+  width: 60px;
+  height: 60px;
+  background-color: #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--Gold-PrimaryColor);
+  border: 2px solid var(--Gold-PrimaryColor);
+}
+
+.user-details h2 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.user-details p {
+  color: var(--Text-Muted);
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.btn-logout {
+  margin-top: 1rem;
+  background-color: transparent;
+  border: 1px solid var(--Danger-Color);
+  color: var(--Danger-Color);
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.btn-logout:hover {
+  background-color: var(--Danger-Color);
+  color: white;
+}
+
+.subs-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sub-card {
+  background-color: var(--bg-secondryColor);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #333;
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.sub-card.active {
+  border-color: var(--Gold-PrimaryColor);
+}
+
+.sub-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.plan-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--Text-White);
+}
+
+.sub-price {
+  font-size: 1.2rem;
+  color: var(--Gold-PrimaryColor);
+  font-weight: bold;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.status-active {
+  background-color: rgba(76, 175, 80, 0.2);
+  color: var(--Success);
+}
+
+.status-cancelled {
+  background-color: rgba(255, 77, 77, 0.2);
+  color: var(--Danger-Color);
+}
+
+.status-expired {
+  background-color: #333;
+  color: var(--Text-Muted);
+}
+
+.date-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--Text-Muted);
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5rem;
+}
+
+.btn-update-sub{
+ width: 100%;
+  margin-top: 1rem;
+  padding: 12px;
+  background-color: var(--Gold-PrimaryColor);
+  color: var(--bg-PrimaryColor);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn-cancel-sub {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 12px;
+  background-color: #333;
+  color: var(--Text-White);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn-cancel-sub:hover {
+  background-color: var(--Danger-Color);
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .user-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .btn-logout {
+    width: auto;
+    margin-top: 0;
+  }
+
+  .subs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}

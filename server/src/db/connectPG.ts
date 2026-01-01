@@ -4,7 +4,7 @@ export const pool = new Pool({
     user: process.env.PGUSER,
     host: process.env.PGHOST,
     database: process.env.PGDATABASE,
-    password: 'd3_priynka_jonas',
+    password: process.env.PG_PASSWORD,//if connection failed then try direct password hard coded without .env becuase here password required string
     port: Number(process.env.PG_PORT)
 });
 

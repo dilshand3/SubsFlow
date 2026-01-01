@@ -1,0 +1,94 @@
+/* 1. Mobile First: Default Styles (Small Screens) */
+.auth-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--bg-PrimaryColor);
+    padding: 1rem; /* Mobile par thoda gap side se */
+}
+
+.auth-card {
+    background-color: var(--bg-secondryColor);
+    padding: 1.5rem; /* Mobile par kam padding */
+    border-radius: 12px;
+    width: 100%; /* Mobile par full width */
+    max-width: 100%; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    border: 1px solid #333;
+}
+
+.auth-title {
+    color: var(--Gold-PrimaryColor);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem; /* Mobile optimized font */
+}
+
+.input-group {
+    margin-bottom: 1rem;
+}
+
+.input-group label {
+    display: block;
+    color: #b3b3b3;
+    margin-bottom: 0.4rem;
+    font-size: 0.85rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    background: #1a1a1a;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: white;
+    outline: none;
+    font-size: 16px; /* Important: Mobile browsers automatic zoom rokne ke liye */
+    box-sizing: border-box; /* Padding handling */
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 14px; /* Mobile par touch area bada hona chahiye */
+    background-color: var(--Gold-PrimaryColor);
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #000;
+}
+
+/* 2. Tablet & Desktop (Media Query for Larger Screens) */
+@media (min-width: 640px) {
+    .auth-card {
+        padding: 2.5rem;
+        max-width: 400px; /* Badi screen par size fix */
+    }
+
+    .auth-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .auth-container {
+        padding: 2rem;
+    }
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.auth-switch span {
+    color: var(--Gold-PrimaryColor);
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-left: 5px;
+}

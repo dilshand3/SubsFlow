@@ -1,0 +1,141 @@
+.plans-container {
+  background-color: var(--bg-PrimaryColor);
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+  color: var(--Text-White);
+}
+
+.page-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: var(--Gold-PrimaryColor);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Mobile First Grid Layout (Default 1 column) */
+.plans-grid {
+  display: grid;
+  grid-template-columns: 1fr; 
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Tablet (min-width: 640px) -> 2 Columns */
+@media (min-width: 640px) {
+  .plans-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop (min-width: 1024px) -> 3 Columns */
+@media (min-width: 1024px) {
+  .plans-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Card Styling */
+.plan-card {
+  background-color: var(--bg-secondryColor);
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  border-color: var(--Gold-PrimaryColor);
+}
+
+.plan-name {
+  font-size: 1.5rem;
+  color: var(--Gold-PrimaryColor);
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.plan-desc {
+  color: var(--Text-Muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+/* Price Section */
+.plan-details {
+  margin-bottom: 1.5rem;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
+  padding: 1rem 0;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.price-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--Text-White);
+}
+
+.seats-text {
+  color: var(--Gold-PrimaryColor);
+  font-weight: 500;
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  background-color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Subscribe Button */
+.btn-subscribe {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--Gold-PrimaryColor);
+  color: #000; /* Black text for contrast on Gold */
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-transform: uppercase;
+}
+
+.btn-subscribe:hover {
+  background-color: #e69500; /* Darker Gold on hover */
+}
+
+.btn-subscribe:disabled {
+  background-color: #444;
+  color: #888;
+  cursor: not-allowed;
+}
+
+/* Loading/Error States */
+.loading-container, .error-container, .empty-container {
+  text-align: center;
+  padding: 3rem;
+  color: var(--Text-White);
+  background-color: var(--bg-PrimaryColor);
+  min-height: 100vh;
+}
